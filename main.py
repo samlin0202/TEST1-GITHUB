@@ -51,7 +51,10 @@ def remove_task(index):
     save_tasks(tasks)
     print(f"已刪除：{removed}")
 
-
+# 全部刪除任務
+def clear_tasks():
+    save_tasks([])
+    print("已清空所有任務")
 # 主程式
 if __name__ == "__main__":
 
@@ -78,6 +81,7 @@ if __name__ == "__main__":
                 remove_task(int(sys.argv[2]))
             except ValueError:
                 print("請輸入數字")
-
+    elif command == "clear":
+        clear_tasks()
     else:
         print("未知指令：list / add / remove")
